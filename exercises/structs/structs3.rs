@@ -17,6 +17,7 @@ impl Package {
     fn new(sender_country: String, recipient_country: String, weight_in_grams: i32) -> Package {
         if weight_in_grams <= 0 {
             // panic statement goes here...
+            panic!("the weight is physically impossible :)");
         } else {
             Package {
                 sender_country,
@@ -27,11 +28,12 @@ impl Package {
     }
 
     fn is_international(&self) -> ??? {
-        // Something goes here...
+        //  For is_international: What makes a package international? Seems related to the places it goes through right?
+
     }
 
     fn get_fees(&self, cents_per_gram: i32) -> ??? {
-        // Something goes here...
+        // For calculate_transport_fees: Bigger is more expensive usually, we don't have size, but something may fit the bill here :)
     }
 }
 
