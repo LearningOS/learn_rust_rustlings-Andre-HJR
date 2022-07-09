@@ -1,3 +1,14 @@
+DOCKER_NAME ?= rust-rustlings
+
+.PHONY: docker build_docker
+
+docker:
+	docker run --rm -it -v D:/Files_Tree/Source_Files/EnvDev/learn_rust_rustlings-Andre-HJR:/mnt -w /mnt ${DOCKER_NAME} bash
+
+build_docker: 
+	docker build -t ${DOCKER_NAME} .
+
+
 setupclassroom:
 	mkdir -p .github/classroom/
 	mkdir -p .github/workflows/
