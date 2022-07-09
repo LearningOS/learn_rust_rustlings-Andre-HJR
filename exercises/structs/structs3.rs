@@ -27,13 +27,14 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> ??? {
+    fn is_international(&self) -> bool {
         //  For is_international: What makes a package international? Seems related to the places it goes through right?
-
+        if self.sender_country == self.recipient_country { false } else { true }
     }
 
-    fn get_fees(&self, cents_per_gram: i32) -> ??? {
+    fn get_fees(&self, cents_per_gram: i32) -> i32 {
         // For calculate_transport_fees: Bigger is more expensive usually, we don't have size, but something may fit the bill here :)
+        self.weight_in_grams * cents_per_gram
     }
 }
 
