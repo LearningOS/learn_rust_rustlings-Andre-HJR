@@ -37,6 +37,16 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        if s.len() == 0 {
+            Default::default()
+        } else {
+            let mut sp = s.split(',');
+            let (name, age, others) = (sp.next(), sp.next(), sp.next());
+            match (name.map(|n| n.into()), age.map(|a| a.parse().ok()).flatten(), others) {
+                (Some(name), Some(age), None) if name != "" => Person { name, age },
+                _ => Default::default(),
+            }
+        }
     }
 }
 
