@@ -7,7 +7,6 @@
 // Make this code compile! Execute `rustlings hint advanced_errs1` for
 // hints :)
 
-// I AM NOT DONE
 
 use std::num::ParseIntError;
 use std::str::FromStr;

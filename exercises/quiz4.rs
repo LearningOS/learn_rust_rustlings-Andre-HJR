@@ -9,7 +9,6 @@ macro_rules! my_macro {
     ($v: expr) => (format!("Hello {}", $v))
 }
 
-// I AM NOT DONE
 
 #[cfg(test)]
 mod tests {
